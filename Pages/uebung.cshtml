@@ -1,0 +1,39 @@
+﻿@page
+
+
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <title>Formular</title>
+</head>
+<body>
+<h1> Beispiel für ein Formular </h1>
+
+<form  action="" method="POST">
+  Höhe: <input name= "height">  <p>
+  
+  <input type="submit" value="Absenden">
+</form>
+@{
+  int height = 0;
+  int count = 0;
+  
+  
+  if (Request.Method == "POST") {
+    height = Convert.ToInt32(Request.Form["height"]);
+    count = height;
+    for (int i = 0; i < count; i++)
+    {
+      for (int j = 0; j <= i; j++)
+      {
+        <span>*</span> ;
+
+      }
+      <br>
+    }
+  } 
+}
+<p>Höhe: @height</p>
+
+</body>
+</html>
